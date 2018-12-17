@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="main.css" rel="stylesheet" type="text/css"/> 
+<script>
+function add() {
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    x.id=document.getElementById("frm").childNodes.length
+    document.getElementById("frm").appendChild(x);
+}
+function del(){
+	var cnt=document.getElementById("frm").elements.length
+	if(cnt<4) return
+	var last=document.getElementById("frm").elements[cnt-1]
+	document.getElementById("frm").removeChild(last)
+}
+function draw(){
+	var d=document.getElementById('table')
+	var n=document.getElementById("frm").elements.length
+	for (var i=3;i<n;++i){
+	var td=document.createElement('td');
+	var a=document.getElementById(4+i).value;
+	td.innerHTML=a;
+	td.classList.add('graph_col');
+	var div=document.createElement('div');
+	div.style.height=a+'px';
+	div.classList.add('graph_div');
+	td.appendChild(div);
+	d.appendChild(td);}
+}
+</script>
+</head>
+<body>
+<form id="frm">
+<input type="button" onclick="add()" value="Додати"/>
+<input type="button" onclick="del()" value="Вилучити"/>	
+<input type="button" onclick="draw()" value="Створити Гістораму"/>
+</form>
+    <table class="graph" cellspacing="0px">
+	<tr id="table">
+	</tr>
+    </table>
+</body>
+</html>

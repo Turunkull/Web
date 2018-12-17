@@ -1,0 +1,19 @@
+.graph, .graph tr, .graph td  {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: bottom;
+    text-align: center;
+}
+.graph  {
+    border: 1px solid silver;
+}
+.graph_col    {
+    text-align: center;
+}
+.graph_div    {	
+    width: 30px;	
+    background-color: blue;
+    color: white;
+    margin: 10px 3px;
+}
